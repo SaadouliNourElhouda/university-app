@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.fiche {
+  width: 500px;
+  padding: 25px;
+  border: 2px solid #8e44ad;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.fiche h1 {
+  text-align: center;
+  color: #8e44ad;
+}
+
+.fiche img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px auto;
+}
+
+.informations {
+  text-align: left;
+}
+
+.informations p {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn-contact {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 20px;
+  background-color: #8e44ad;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-contact:hover {
+  background-color: #732d91;
+}
