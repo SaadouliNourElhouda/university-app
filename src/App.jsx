@@ -1,36 +1,58 @@
 import "./App.css";
+import Header from "./components/Header.jsx";
+import Navbar from "./components/Navbar.jsx";
+import StudentCard from "./components/StudentCard.jsx";
+import Footer from "./components/Footer.jsx";
 
-const nom = "SAADOULI";
-const prenom = "Nour Elhouda";
-const email = "noursaadouli58@gmail.com";
-const telephone = "+216 96168786";
-const filiere = "Génie Logiciel et Systèmes d'Information";
-const annee = "2ème année";
-const groupe = "GLSI2_A";
-const ville = "Mahdia";
+const etudiants = [
+  {
+    prenom: "Nour Elhouda",
+    nom: "SAADOULI",
+    email: "noursaadouli58@gmail.com",
+    telephone: "+216 96168786",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI2_A",
+    ville: "Mahdia",
+    image: "/n.jpg",
+  },
+  {
+    prenom: "Sarra",
+    nom: "Trabelsi",
+    email: "sarra.trabelsi@gmail.com",
+    telephone: "+216 11 111 111",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI 2",
+    ville: "Sousse",
+    image: "/u.jpg",
+  },
+];
 
 function App() {
   return (
-    <div className="container">
-      <div className="fiche">
-        <h1>Fiche étudiant</h1>
-        <img src="/n.jpg" alt="Photo de l'étudiant" />
+    <div className="app">
+      <Header />
+      <Navbar />
 
-        <div className="informations">
-          <p><strong>Nom :</strong> {nom}</p>
-          <p><strong>Prénom :</strong> {prenom}</p>
-          <p><strong>Email :</strong> {email}</p>
-          <p><strong>Téléphone :</strong> {telephone}</p>
-          <p><strong>Filière :</strong> {filiere}</p>
-          <p><strong>Année d'étude :</strong> {annee}</p>
-          <p><strong>Groupe :</strong> {groupe}</p>
-          <p><strong>Ville :</strong> {ville}</p>
-        </div>
+      <main className="students-list">
+        {etudiants.map((etudiant) => (
+          <StudentCard
+            key={etudiant.email}
+            prenom={etudiant.prenom}
+            nom={etudiant.nom}
+            email={etudiant.email}
+            telephone={etudiant.telephone}
+            filiere={etudiant.filiere}
+            anneeEtude={etudiant.anneeEtude}
+            groupe={etudiant.groupe}
+            ville={etudiant.ville}
+            image={etudiant.image}
+          />
+        ))}
+      </main>
 
-        <a href={`mailto:${email}`} className="btn-contact">
-          Contacter
-        </a>
-      </div>
+      <Footer />
     </div>
   );
 }
